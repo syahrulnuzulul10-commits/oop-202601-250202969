@@ -25,6 +25,18 @@ Kendala awal adalah memastikan lingkungan build dan Maven terkonfigurasi dengan 
 ## Penggunaan AI
 - Alat yang dipakai: Antigravity AI
 - Bagian yang dibantu AI: Penyusunan implementasi `HelloProsedural`, `HelloOOP`, dan `HelloFungsional` serta sinkronisasi format sapaan.
-- Prompt utama: "kerjakan week 1"
+- Prompt utama: "Kerjakan Week 1 sesuai instruksi dan struktur proyek yang sudah tersedia. Mulai dengan memeriksa isi repositori dan memahami ketentuan tugas terlebih dahulu. Isi file mahasiswa.properties menggunakan identitas mahasiswa yang tersedia.
+
+Implementasikan fungsi sapaan sistem Aset-Pinjam dalam tiga paradigma pemrograman:
+
+Prosedural pada HelloProsedural.java.
+Berorientasi objek pada HelloOOP.java.
+Fungsional pada HelloFungsional.java.
+
+Pastikan ketiga implementasi menghasilkan format sapaan yang sama persis sesuai ketentuan unit test. Untuk OOP, gunakan enkapsulasi dengan field yang sesuai. Untuk pendekatan fungsional, gunakan lambda atau Function<String, String> jika sesuai dengan struktur tugas.
+
+Setelah implementasi selesai, jalankan unit test Minggu01Test dan perbaiki jika masih ada kesalahan. Jangan mengubah unit test hanya untuk membuat pengujian lolos. Gunakan struktur kode yang sudah ada dan hindari perubahan yang tidak diperlukan.
+
+Tulis kode dengan gaya yang sederhana, rapi, dan mudah dipahami oleh mahasiswa yang sedang belajar paradigma pemrograman. Jangan menambahkan fitur di luar kebutuhan Week 1. Setelah selesai, jelaskan secara singkat file yang diubah, hasil pengujian, serta perbedaan penerapan ketiga paradigma dalam implementasi tersebut."
 - Yang saya ubah atau tolak dari saran AI, dan alasannya: Memastikan template format string sapaan tepat dan konsisten antara ketiga kelas agar assertion `isEqualTo` pada unit test terpenuhi sempurna.
 - Satu hal yang saya pahami lebih baik sekarang: Bagaimana perbedaan mendasar penanganan state dan perilaku pada paradigma prosedural (fungsi statis tanpa state objek), OOP (state terenkapsulasi dalam objek), dan fungsional (fungsi higher-order/lambda tanpa modifikasi state langsung).
