@@ -22,6 +22,22 @@ Memastikan validasi pada konstruktor induk (`super`) terpanggil sebelum validasi
 ## Penggunaan AI
 - Alat yang dipakai: Antigravity AI
 - Bagian yang dibantu AI: Implementasi subclass `Ruang`, `Laptop`, `AlatLab`, dan perancangan analisis keterbatasan pewarisan vs komposisi.
-- Prompt utama: "kerjakan week 2 dan week 3"
+- Prompt utama: "Week 3 sesuai instruksi tugas dan struktur proyek yang sudah tersedia. Fokus pada penerapan inheritance atau pewarisan pada sistem Aset-Pinjam.
+
+Buat tiga subclass dari class Aset, yaitu Ruang, Laptop, dan AlatLab. Gunakan extends Aset dan panggil konstruktor induk melalui super(kode, nama) agar validasi atribut dasar tetap ditangani oleh class Aset.
+
+Implementasikan atribut khusus untuk masing-masing subclass:
+
+Ruang: atribut kapasitas yang harus bernilai lebih dari 0.
+Laptop: atribut spesifikasi dan nomorInventaris yang tidak boleh null, kosong, atau hanya berisi spasi.
+AlatLab: atribut laboratorium yang tidak boleh null atau blank, serta tingkatRisiko yang tidak boleh null.
+
+Gunakan private final untuk atribut tambahan yang nilainya tidak perlu diubah setelah objek dibuat. Tambahkan konstruktor, getter jika diperlukan oleh spesifikasi, dan override method getJenis() agar setiap subclass mengembalikan nilai JenisAset yang sesuai.
+
+Periksa terlebih dahulu enum, class induk, pola penamaan, dan unit test yang sudah tersedia. Ikuti struktur proyek yang ada dan jangan mengubah unit test hanya agar pengujian lolos. Hindari menambahkan fitur yang tidak diminta.
+
+Setelah implementasi selesai, jalankan unit test Minggu03HierarkiTest. Perbaiki kesalahan yang ditemukan berdasarkan spesifikasi tugas dan pastikan setiap subclass dapat digunakan melalui referensi bertipe Aset.
+
+Terakhir, jelaskan secara singkat bagaimana inheritance digunakan pada ketiga subclass, manfaat super() dan overriding getJenis(), serta berikan contoh pada sistem Aset-Pinjam tentang situasi ketika komposisi lebih tepat digunakan daripada inheritance. Gunakan kode yang sederhana, rapi, dan mudah dipahami oleh mahasiswa yang sedang belajar OOP."
 - Yang saya ubah atau tolak dari saran AI, dan alasannya: Memastikan pesan exception informatif dan atribut subclass diatur sebagai `final` agar konsisten dengan prinsip immutability.
 - Satu hal yang saya pahami lebih baik sekarang: Pemahaman tentang bagaimana konstruktor subclass mendelegasikan inisialisasi state dasar ke superclass, serta kapan harus memilih komposisi alih-alih inheritance untuk menghindari hierarki pewarisan yang rapuh (*fragile base class problem*).
