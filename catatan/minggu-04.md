@@ -21,6 +21,6 @@ Memastikan validasi hari negatif konsisten di seluruh class dan subclass, serta 
 ## Penggunaan AI
 - Alat yang dipakai: Antigravity AI
 - Bagian yang dibantu AI: Implementasi method overriding `hitungDenda` pada hierarki aset dan method overloading `cari` pada `KatalogAset`.
-- Prompt utama: "push week 4"
+- Prompt utama: Bantu saya mengimplementasikan konsep polymorphism pada project Java OOP minggu ke4, meliputi method overriding untuk perhitungan denda pada class Aset dan subclass-nya, serta method overloading untuk fitur pencarian pada class KatalogAset. Pastikan kode sesuai dengan ketentuan tugas dan semua pengujian berhasil.
 - Yang saya ubah atau tolak dari saran AI, dan alasannya: Memastikan method overloading `cari(kata, jenis)` menggunakan kembali method `cari(kata)` agar tidak terjadi duplikasi logika pencarian string case-insensitive (*DRY principle*).
 - Satu hal yang saya pahami lebih baik sekarang: Perbedaan nyata antara method overriding (polimorfisme dinamis saat runtime berdasarkan objek aktual) dan method overloading (polimorfisme statis saat compile time berdasarkan tanda tangan parameter method).
