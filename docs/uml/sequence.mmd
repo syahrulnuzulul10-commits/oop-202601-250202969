@@ -1,0 +1,36 @@
+sequenceDiagram
+    autonumber
+    actor Peminjam
+    participant Jadwal as jadwal:JadwalPeminjaman
+    participant Peminjaman as peminjaman:Peminjaman
+    participant Aset as aset:Aset
+
+    Peminjam->>Jadwal: ajukan(peminjaman)
+    activate Jadwal
+
+    Jadwal->>Peminjaman: getAset()
+    activate Peminjaman
+    Peminjaman-->>Jadwal: aset
+    deactivate Peminjaman
+
+    Jadwal->>Aset: bisaDipinjam()
+    activate Aset
+    Aset-->>Jadwal: true
+    deactivate Aset
+
+    Jadwal->>Jadwal: bentrok(peminjaman)
+
+    alt Skenario Sukses (Tidak Bentrok)
+        Note over Jadwal: Tidak ada peminjaman bertabrakan waktu pada aset yang sama
+        Jadwal->>Jadwal: daftar.add(peminjaman)
+        Jadwal->>Peminjaman: ubahStatus(StatusPeminjaman.DISETUJUI)
+        activate Peminjaman
+        Peminjaman-->>Jadwal: void
+        deactivate Peminjaman
+        Jadwal-->>Peminjam: Berhasil diajukan
+    else Skenario Gagal (Bentrok)
+        Note over Jadwal: Ditemukan peminjaman aktif yang tumpang tindih waktu
+        Jadwal-->>Peminjam: throw PeminjamanBentrokException("Jadwal bentrok")
+    end
+
+    deactivate Jadwal

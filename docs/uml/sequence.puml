@@ -1,0 +1,41 @@
+@startuml
+autonumber
+actor Peminjam
+participant "jadwal:JadwalPeminjaman" as Jadwal
+participant "peminjaman:Peminjaman" as Peminjaman
+participant "aset:Aset" as Aset
+
+Peminjam -> Jadwal : ajukan(peminjaman)
+activate Jadwal
+
+Jadwal -> Peminjaman : getAset()
+activate Peminjaman
+Peminjaman --> Jadwal : aset
+deactivate Peminjaman
+
+Jadwal -> Aset : bisaDipinjam()
+activate Aset
+Aset --> Jadwal : true / false
+deactivate Aset
+
+Jadwal -> Jadwal : bentrok(peminjaman)
+activate Jadwal
+deactivate Jadwal
+
+alt Skenario Sukses: tidak bentrok & aset bisa dipinjam
+    Jadwal -> Jadwal : daftar.add(peminjaman)
+    activate Jadwal
+    deactivate Jadwal
+
+    Jadwal -> Peminjaman : ubahStatus(StatusPeminjaman.DISETUJUI)
+    activate Peminjaman
+    Peminjaman --> Jadwal : void
+    deactivate Peminjaman
+
+    Jadwal --> Peminjam : Peminjaman berhasil diajukan & disetujui
+else Skenario Gagal: bentrok dengan peminjaman lain
+    Jadwal --> Peminjam : throw PeminjamanBentrokException("Jadwal bentrok pada rentang waktu tersebut")
+end
+
+deactivate Jadwal
+@enduml
