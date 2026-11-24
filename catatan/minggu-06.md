@@ -19,6 +19,6 @@ Menjaga konsistensi antara diagram dan kode aktual memerlukan ketelitian pada de
 - Alat yang dipakai: Antigravity
 - Bagian yang dibantu AI: Penyusunan sintaks diagram PlantUML dan Mermaid (`class.puml`, `class.mmd`, `sequence.puml`, `sequence.mmd`), serta perumusan dokumen analisis `solid.md`.
 - Prompt utama:
-  1. "Tolong kerjakan tugas minggu 6 — buat Class Diagram dan Sequence Diagram UML yang konsisten dengan kode, serta analisis prinsip SOLID di docs/uml/solid.md."
+  1. "buat Class Diagram dan Sequence Diagram UML yang konsisten dengan kode, serta analisis prinsip SOLID di docs/uml/solid.md."
 - Yang saya ubah atau tolak dari saran AI, dan alasannya: Memastikan nama method dan visibilitas pada diagram sepenuhnya selaras dengan kode nyata dan bukan sekadar sketsa konseptual.
 - Satu hal yang saya pahami lebih baik sekarang: Bagaimana prinsip Open/Closed (OCP) dan Dependency Inversion (DIP) bekerja bersama-sama dengan pola Strategy pada `AturanDenda` dan `LayananDenda` untuk menghasilkan kode yang mudah diekstensi dan mudah diuji.

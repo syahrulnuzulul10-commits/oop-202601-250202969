@@ -27,6 +27,6 @@ Setelah `Aset` menjadi `abstract`, import `Varian` di `Aset.java` menjadi tidak 
 - Alat yang dipakai: Antigravity (Claude Sonnet 4.6)
 - Bagian yang dibantu AI: `Aset.bisaDipinjam()`, `DendaFlat.hitung()`, `DendaProgresif.hitung()`, dan refactor `hitungDenda` menjadi abstract
 - Prompt utama:
-  1. lanjutkan bagian abstraction. Sesuaikan class Aset, buat aturan denda flat dan progresif, lalu cek apakah semuanya sudah berjalan sesuai ketentuan tugas. Kalau sudah, jalankan test untuk memastikan tidak ada error.
+  - lanjutkan bagian abstraction. Sesuaikan class Aset, buat aturan denda flat dan progresif, lalu cek apakah semuanya sudah berjalan sesuai ketentuan tugas. Kalau sudah, jalankan test untuk memastikan tidak ada error.
 - Yang saya ubah atau tolak dari saran AI, dan alasannya: Rumus progresif diusulkan dan divalidasi oleh AI, saya menerimanya setelah memverifikasi bahwa semua syarat tes terpenuhi secara matematis.
 - Satu hal yang saya pahami lebih baik sekarang: Perbedaan antara `abstract class` dan `interface` — `abstract class` cocok untuk berbagi state/implementasi sebagian (seperti field `status` dan `kondisi` di `Aset`), sedangkan `interface` cocok untuk mendefinisikan kontrak perilaku tanpa state (seperti `DapatDipinjam` dan `AturanDenda`).
